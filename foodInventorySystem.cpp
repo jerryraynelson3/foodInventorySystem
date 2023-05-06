@@ -44,7 +44,10 @@ int WINAPI WinMain(
 
     if (!RegisterClassEx(&wcex))
     {
-        MessageBox(NULL, _T("Call to RegisterClassEx failed!"), _T("Windows Desktop Guided Tour"), NULL);
+        MessageBox(NULL,
+            _T("Call to RegisterClassEx failed!"),
+            _T("Windows Desktop Guided Tour"),
+            NULL);
 
         return 1;
     }
@@ -63,8 +66,18 @@ int WINAPI WinMain(
     // NULL: this application does not have a menu bar
     // hInstance: the first parameter from WinMain
     // NULL: not used in this application
-    HWND hWnd = CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, szWindowClass, szTitle, WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 500, 100,
-        NULL, NULL, hInstance, NULL);
+    HWND hWnd = CreateWindowEx(
+        WS_EX_OVERLAPPEDWINDOW,
+        szWindowClass,
+        szTitle,
+        WS_OVERLAPPEDWINDOW,
+        CW_USEDEFAULT, CW_USEDEFAULT,
+        500, 100,
+        NULL,
+        NULL,
+        hInstance,
+        NULL
+    );
 
     if (!hWnd)
     {
@@ -79,7 +92,8 @@ int WINAPI WinMain(
     // The parameters to ShowWindow explained:
     // hWnd: the value returned from CreateWindow
     // nCmdShow: the fourth parameter from WinMain
-    ShowWindow(hWnd,nCmdShow);
+    ShowWindow(hWnd,
+        nCmdShow);
     UpdateWindow(hWnd);
 
     // Main message loop:
